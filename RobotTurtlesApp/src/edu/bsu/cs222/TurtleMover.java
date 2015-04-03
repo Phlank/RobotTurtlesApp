@@ -30,14 +30,14 @@ public class TurtleMover {
 		return map;
 	}
 
-	private void findTurtleAndNextTile(){
+	private void findTurtleAndNextTile() {
 		tileFinder = new TileFinder(new TurtleFinder());
 		turtle = (TurtleTile) tileFinder.findTile(map);
 		locationToMove = turtle.getForwardTileLocation();
 		nextTile = (Tile) map.getTile(locationToMove);
 	}
-	
-	private boolean canMoveFoward() {
+
+	public boolean canMoveFoward() {
 		boolean canTurtleMove = canMove(locationToMove);
 		return (canTurtleMove && nextTile.isOpenSpaceTile());
 	}
@@ -46,7 +46,7 @@ public class TurtleMover {
 		boolean canTurtleMove = canMove(locationToMove);
 		return (canTurtleMove && nextTile.isWoodBlockTile());
 	}
-	
+
 	private GameMap moveTurtleTileForward() {
 		Location turtleLocation = turtle.getLocation();
 		turtle.setLocation(locationToMove);
@@ -67,7 +67,7 @@ public class TurtleMover {
 
 	public GameMap fireLaser() {
 		findTurtleAndNextTile();
-		if (canMove(locationToMove) && nextTile.isIceBlockTile()){
+		if (canMove(locationToMove) && nextTile.isIceBlockTile()) {
 			map.addSingleTileToMap(new PuddleTile(nextTile.getLocation()));
 		}
 		return map;
@@ -75,5 +75,9 @@ public class TurtleMover {
 
 	private boolean canMove(Location locationToMove) {
 		return map.doesLocationExist(locationToMove);
+	}
+	
+	public Tile getTile() {
+		return turtle;
 	}
 }
