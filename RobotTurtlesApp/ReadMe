@@ -1,0 +1,10 @@
+READ ME:
+
+Set Up()
+	Target Android 5.0-21
+	Utilize Android SDK 1.7
+	Import appcompat_v7
+	
+VirtualDeviceManager()
+	Set API Level to 21
+	Select ARM as CPU/ABI
