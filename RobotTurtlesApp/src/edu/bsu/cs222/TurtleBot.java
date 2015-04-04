@@ -34,20 +34,19 @@ public class TurtleBot {
 
 	public void go() {
 		setter.getTurtleMover().findTurtleAndNextTile();
-		if (setter.getTurtleMover().canMoveFoward()) {
+		boolean nextBlockIsForwards = setter.getTurtleMover().canMoveFoward() && leftCount != BACKWARDS_LEFT_COUNT;
+		if (nextBlockIsForwards) {
 			Log.d("GO", "Moving forward");
+			leftCount = 0;
 			Location lastLocation = mover.getTile().getLocation();
 			setter.moveTurtleForward();
 			visited.add(map.getTile(lastLocation));
-			leftCount = 0;
-		} else {
-			if (leftCount == BACKWARDS_LEFT_COUNT) {
-				setter.turnTurtleToLeft();
-				leftCount++;
-			} else if (leftCount == FORWARDS_LEFT_COUNT) {
+		} else if (leftCount == FORWARDS_LEFT_COUNT) {
 				deadEnd();
 				leftCount = 0;
-			}
+		} else {
+			setter.turnTurtleToLeft();
+			leftCount++;
 		}
 	}
 
@@ -97,10 +96,6 @@ public class TurtleBot {
 				}
 			}
 		}
-	}
-	
-	public MapTileSetter getSetter() {
-		return setter;
 	}
 
 }
