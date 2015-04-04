@@ -80,4 +80,8 @@ public class TurtleMover {
 	public TurtleTile getTile() {
 		return turtle;
 	}
+	
+	public GameMap getMap() {
+		return map;
+	}
 }

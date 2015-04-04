@@ -13,8 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import edu.bsu.cs222.CommandRunner;
 import edu.bsu.cs222.R;
+import edu.bsu.cs222.TurtleBot;
 import edu.bsu.cs222.enums.Command;
 import edu.bsu.cs222.game.maps.GameMapDataParser;
 
@@ -25,10 +25,11 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	private Button forward;
 	private Button laser;
 	private Button menuButton;
+	private Button runBot;
 	private PopupMenu menu;
 	private Document document;
 	private GameMapDataParser parser = new GameMapDataParser();
-	private CommandRunner commandRunner = new CommandRunner(mapTileSetter);
+	private TurtleBot bot;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +81,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		forward = (Button) findViewById(R.id.forward);
 		forward.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				commandRunner.run(Command.FORWARD);
+				Command.FORWARD.performTurtleAction(mapTileSetter);
 			}
 		});
 	}
@@ -89,7 +90,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		laser = (Button) findViewById(R.id.laser);
 		laser.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				commandRunner.run(Command.LASER);
+				Command.LASER.performTurtleAction(mapTileSetter);
 			}
 		});
 	}
@@ -98,7 +99,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		right = (Button) findViewById(R.id.right);
 		right.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				commandRunner.run(Command.RIGHT);
+				Command.RIGHT.performTurtleAction(mapTileSetter);
 			}
 		});
 	}
@@ -107,7 +108,17 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		left = (Button) findViewById(R.id.left);
 		left.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				commandRunner.run(Command.LEFT);
+				Command.LEFT.performTurtleAction(mapTileSetter);
+			}
+		});
+	}
+	
+	public void addListenerRunBot() {
+		runBot = (Button) findViewById(R.id.bot);
+		runBot.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				bot = new TurtleBot(mapTileSetter, mapTileSetter.getGameMap());
+				bot.go();
 			}
 		});
 	}
