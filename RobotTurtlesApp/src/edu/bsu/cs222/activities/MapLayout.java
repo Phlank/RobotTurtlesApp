@@ -13,8 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import edu.bsu.cs222.CommandRunner;
 import edu.bsu.cs222.R;
-import edu.bsu.cs222.cards.CardRunner;
 import edu.bsu.cs222.enums.Command;
 import edu.bsu.cs222.game.maps.GameMapDataParser;
 
@@ -28,7 +28,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	private PopupMenu menu;
 	private Document document;
 	private GameMapDataParser parser = new GameMapDataParser();
-	private CardRunner cardRunner = new CardRunner(mapTileSetter);
+	private CommandRunner commandRunner = new CommandRunner(mapTileSetter);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +80,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		forward = (Button) findViewById(R.id.forward);
 		forward.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				cardRunner.run(Command.FORWARD);
+				commandRunner.run(Command.FORWARD);
 			}
 		});
 	}
@@ -89,7 +89,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		laser = (Button) findViewById(R.id.laser);
 		laser.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				cardRunner.run(Command.LASER);
+				commandRunner.run(Command.LASER);
 			}
 		});
 	}
@@ -98,7 +98,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		right = (Button) findViewById(R.id.right);
 		right.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				cardRunner.run(Command.RIGHT);
+				commandRunner.run(Command.RIGHT);
 			}
 		});
 	}
@@ -107,7 +107,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		left = (Button) findViewById(R.id.left);
 		left.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				cardRunner.run(Command.LEFT);
+				commandRunner.run(Command.LEFT);
 			}
 		});
 	}

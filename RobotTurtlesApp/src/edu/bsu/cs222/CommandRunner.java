@@ -1,17 +1,16 @@
-package edu.bsu.cs222.cards;
+package edu.bsu.cs222;
 
 import java.util.List;
 
 import android.os.Handler;
-import edu.bsu.cs222.MapTileSetter;
 import edu.bsu.cs222.enums.Command;
 
-public class CardRunner {
+public class CommandRunner {
 
 	private MapTileSetter mapTileSetter;
 	private boolean running = false;
 
-	public CardRunner(MapTileSetter mapTileSetter) {
+	public CommandRunner(MapTileSetter mapTileSetter) {
 		this.mapTileSetter = mapTileSetter;
 	}
 	

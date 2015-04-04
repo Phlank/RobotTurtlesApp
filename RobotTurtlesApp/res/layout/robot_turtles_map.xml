@@ -444,12 +444,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/MapMenu" />
-
-    <Button
-        android:id="@+id/run"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/run" />
     
 	<HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
