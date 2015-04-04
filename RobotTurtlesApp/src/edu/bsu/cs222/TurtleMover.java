@@ -30,7 +30,7 @@ public class TurtleMover {
 		return map;
 	}
 
-	private void findTurtleAndNextTile() {
+	public void findTurtleAndNextTile() {
 		tileFinder = new TileFinder(new TurtleFinder());
 		turtle = (TurtleTile) tileFinder.findTile(map);
 		locationToMove = turtle.getForwardTileLocation();
@@ -76,11 +76,11 @@ public class TurtleMover {
 	private boolean canMove(Location locationToMove) {
 		return map.doesLocationExist(locationToMove);
 	}
-	
+
 	public TurtleTile getTile() {
 		return turtle;
 	}
-	
+
 	public GameMap getMap() {
 		return map;
 	}

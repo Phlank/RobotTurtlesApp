@@ -16,13 +16,15 @@ public class TurtleBot {
 	private static final int EAST_BLOCK_MODIFIER = 1;
 	private static final int NORTH_BLOCK_MODIFIER = -8;
 	private static final int SOUTH_BLOCK_MODIFIER = 8;
-	
+	private static final int BACKWARDS_LEFT_COUNT = 2;
+	private static final int FORWARDS_LEFT_COUNT = 2;
+
 	private List<Tile> visited = new ArrayList<Tile>();
 	private List<Tile> deadEnds = new ArrayList<Tile>();
 	private MapTileSetter setter;
 	private TurtleMover mover;
 	private GameMap map;
-	private int leftCount = 0;
+	private static int leftCount = 0;
 
 	public TurtleBot(MapTileSetter setter, GameMap map) {
 		this.setter = setter;
@@ -31,32 +33,26 @@ public class TurtleBot {
 	}
 
 	public void go() {
-		if (mover.canMoveFoward()) {
+		setter.getTurtleMover().findTurtleAndNextTile();
+		if (setter.getTurtleMover().canMoveFoward()) {
 			Log.d("GO", "Moving forward");
 			Location lastLocation = mover.getTile().getLocation();
 			setter.moveTurtleForward();
 			visited.add(map.getTile(lastLocation));
 			leftCount = 0;
 		} else {
-			setter.turnTurtleToLeft();
-			leftCount++;
-			if (mover.getTile().getNextTile(mover.getTile().getDirection())
-					.getClass().equals(OpenSpaceTile.class)) {
+			if (leftCount == BACKWARDS_LEFT_COUNT) {
 				setter.turnTurtleToLeft();
 				leftCount++;
-				go();
-			} else {
-				if (leftCount == 4) {
-					deadEnd();
-				} else {
-					go();
-				}
+			} else if (leftCount == FORWARDS_LEFT_COUNT) {
+				deadEnd();
+				leftCount = 0;
 			}
 		}
 	}
 
 	public void deadEnd() {
-		Location deadLocation = mover.getTile().getLocation();
+		Location deadLocation = setter.getTurtleTile().getLocation();
 		moveToLastVisitedTile();
 		deadEnds.add(map.getTile(deadLocation));
 		go();
@@ -64,34 +60,47 @@ public class TurtleBot {
 
 	// Turtle turns left until it faces the last visited tile and moves forward
 	private void moveToLastVisitedTile() {
-		// West
-		if (visited.get(visited.size()-1).getLocation().getTileLocation() == mover.getTile()
-				.getLocation().getTileLocation() - WEST_BLOCK_MODIFIER) {
-			while (mover.getTile().getDirection() != Direction.WEST) {
-				setter.turnTurtleToLeft();
+		if (visited.size() > 0) {
+			// West
+			if (visited.get(visited.size() - 1).getLocation().getTileLocation() == mover
+					.getTile().getLocation().getTileLocation()
+					- WEST_BLOCK_MODIFIER) {
+				while (mover.getTile().getDirection() != Direction.WEST) {
+					setter.turnTurtleToLeft();
+				}
+			}
+			// East
+			else if (visited.get(visited.size() - 1).getLocation()
+					.getTileLocation() == mover.getTile().getLocation()
+					.getTileLocation()
+					+ EAST_BLOCK_MODIFIER) {
+				while (mover.getTile().getDirection() != Direction.EAST) {
+					setter.turnTurtleToLeft();
+				}
+			}
+			// North
+			else if (visited.get(visited.size() - 1).getLocation()
+					.getTileLocation() == mover.getTile().getLocation()
+					.getTileLocation()
+					- NORTH_BLOCK_MODIFIER) {
+				while (mover.getTile().getDirection() != Direction.NORTH) {
+					setter.turnTurtleToLeft();
+				}
+			}
+			// South
+			else if (visited.get(visited.size() - 1).getLocation()
+					.getTileLocation() == mover.getTile().getLocation()
+					.getTileLocation()
+					- SOUTH_BLOCK_MODIFIER) {
+				while (mover.getTile().getDirection() != Direction.SOUTH) {
+					setter.turnTurtleToLeft();
+				}
 			}
 		}
-		// East
-		else if (visited.get(visited.size()-1).getLocation().getTileLocation() == mover
-				.getTile().getLocation().getTileLocation() + EAST_BLOCK_MODIFIER) {
-			while (mover.getTile().getDirection() != Direction.EAST) {
-				setter.turnTurtleToLeft();
-			}
-		}
-		// North
-		else if (visited.get(visited.size()-1).getLocation().getTileLocation() == mover
-				.getTile().getLocation().getTileLocation() - NORTH_BLOCK_MODIFIER) {
-			while (mover.getTile().getDirection() != Direction.NORTH) {
-				setter.turnTurtleToLeft();
-			}
-		}
-		// South
-		else if (visited.get(visited.size()-1).getLocation().getTileLocation() == mover
-				.getTile().getLocation().getTileLocation() - SOUTH_BLOCK_MODIFIER){
-			while (mover.getTile().getDirection() != Direction.SOUTH) {
-				setter.turnTurtleToLeft();
-			}
-		}
+	}
+	
+	public MapTileSetter getSetter() {
+		return setter;
 	}
 
 }

@@ -8,15 +8,15 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 
-public class MapMenuItem implements MenuItem{
-	
+public class MapMenuItem implements MenuItem {
+
 	private Integer mapId;
-	
-	public MapMenuItem(Integer mapId){
+
+	public MapMenuItem(Integer mapId) {
 		this.mapId = mapId;
 	}
-	
-	public Integer getMapId(){
+
+	public Integer getMapId() {
 		return mapId;
 	}
 
@@ -199,7 +199,7 @@ public class MapMenuItem implements MenuItem{
 	@Override
 	public void setShowAsAction(int actionEnum) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -261,6 +261,5 @@ public class MapMenuItem implements MenuItem{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 
 }

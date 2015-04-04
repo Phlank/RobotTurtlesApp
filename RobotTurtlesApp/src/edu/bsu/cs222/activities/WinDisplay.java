@@ -13,12 +13,12 @@ import edu.bsu.cs222.game.maps.GameMapSelecter;
 public class WinDisplay extends ActionBarActivity {
 
 	protected MapTileSetter mapTileSetter = new MapTileSetter(this);
-	public GameMapSelecter gameMapSelecter = new GameMapSelecter(mapTileSetter);
+	public GameMapSelecter gameMapSelector = new GameMapSelecter(mapTileSetter);
 	private AlertDialog.Builder builder;
 	private static final Integer FINAL_MAP = 15;
 	private static final Integer FIRST_MAP = 1;
 	private static final Integer INCREMENT_MAP = 1;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,32 +53,35 @@ public class WinDisplay extends ActionBarActivity {
 		AlertDialog winScreen = builder.create();
 		winScreen.show();
 	}
-	
-	private void pickMap(){
-		Integer currentMap = gameMapSelecter.getCurrentMap();
+
+	private void pickMap() {
+		Integer currentMap = gameMapSelector.getCurrentMap();
 		if (currentMap.equals(FINAL_MAP)) {
-			gameMapSelecter.mapSelecter(new MapMenuItem(FIRST_MAP));
+			gameMapSelector.mapSelecter(new MapMenuItem(FIRST_MAP));
 		} else {
-			gameMapSelecter.mapSelecter(new MapMenuItem(currentMap + INCREMENT_MAP));
+			gameMapSelector.mapSelecter(new MapMenuItem(currentMap
+					+ INCREMENT_MAP));
 		}
 	}
 
 	public void setMessages(Integer score) {
-		Integer currentMap = gameMapSelecter.getCurrentMap();
+		Integer currentMap = gameMapSelector.getCurrentMap();
 		if (currentMap.equals(FINAL_MAP)) {
 			setFinalMessage(score);
-		}else{
+		} else {
 			setRegularMessage(score);
 		}
 	}
-	
-	private void setFinalMessage(Integer score){
-		builder.setMessage("You Found the Last Jewel! \n Your Score is: " + score + "\n Do You Want to Play Again?");
+
+	private void setFinalMessage(Integer score) {
+		builder.setMessage("You Found the Last Jewel! \n Your Score is: "
+				+ score + "\n Do You Want to Play Again?");
 		builder.setTitle(R.string.win_message_title);
 	}
-	
-	private void setRegularMessage(Integer score){
-		builder.setMessage("Nice Job! You Found the Jewel! \n Your Score is: " + score);
+
+	private void setRegularMessage(Integer score) {
+		builder.setMessage("Nice Job! You Found the Jewel! \n Your Score is: "
+				+ score);
 		builder.setTitle(R.string.replay_message_title);
 	}
 }
