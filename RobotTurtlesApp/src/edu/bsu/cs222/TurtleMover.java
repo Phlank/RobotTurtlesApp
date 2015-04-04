@@ -77,7 +77,7 @@ public class TurtleMover {
 		return map.doesLocationExist(locationToMove);
 	}
 	
-	public Tile getTile() {
+	public TurtleTile getTile() {
 		return turtle;
 	}
 }
