@@ -108,4 +108,8 @@ public class MapTileSetter {
 	public TurtleMover getTurtleMover() {
 		return turtleMover;
 	}
+	
+	public Tile getForwardTile() {
+		return gameMap.getTile(turtleTile.getForwardTileLocation());
+	}
 }
