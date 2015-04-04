@@ -14,7 +14,7 @@ public class TurtleBot {
 	private static final int NORTH_BLOCK_MODIFIER = -8;
 	private static final int SOUTH_BLOCK_MODIFIER = 8;
 	private static final int BACKWARDS_LEFT_COUNT = 2;
-	private static final int FORWARDS_LEFT_COUNT = 2;
+	private static final int FORWARDS_LEFT_COUNT = 4;
 
 	private static ArrayList<Tile> visited = new ArrayList<Tile>();
 	private static ArrayList<Tile> deadEnds = new ArrayList<Tile>();
@@ -36,7 +36,7 @@ public class TurtleBot {
 			setter.turnTurtleToLeft();
 			leftCount++;
 		} // Looking at empty block (not backwards)
-		else if (setter.getTurtleMover().canMoveFoward()) {
+		else if (setter.getTurtleMover().canMoveFoward() && !visited.contains(setter.getForwardTile())) {
 			Log.d("GO", "Moving forward");
 			leftCount = 0;
 			Location lastLocation = setter.getTurtleTile().getLocation();
@@ -46,7 +46,7 @@ public class TurtleBot {
 		else if (leftCount == FORWARDS_LEFT_COUNT
 				&& !deadEnds.contains(setter.getForwardTile())) {
 			deadEnd();
-			leftCount = 0;
+			leftCount = 2;
 		} // Looking at either left or right of arrival position and no path
 		else {
 			setter.turnTurtleToLeft();
@@ -100,7 +100,6 @@ public class TurtleBot {
 			}
 			visited.remove(visited.size() - 1);
 			setter.moveTurtleForward();
-			leftCount = 2;
 		}
 	}
 
