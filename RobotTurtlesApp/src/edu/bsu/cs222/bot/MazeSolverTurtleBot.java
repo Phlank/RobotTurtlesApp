@@ -1,13 +1,16 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.bot;
 
 import java.util.ArrayList;
 
 import android.util.Log;
+import edu.bsu.cs222.Location;
+import edu.bsu.cs222.MapTileSetter;
+import edu.bsu.cs222.TurtleMover;
 import edu.bsu.cs222.enums.Direction;
 import edu.bsu.cs222.game.maps.GameMap;
 import edu.bsu.cs222.tiles.Tile;
 
-public class TurtleBot {
+public class MazeSolverTurtleBot {
 
 	private static final int WEST_BLOCK_MODIFIER = -1;
 	private static final int EAST_BLOCK_MODIFIER = 1;
@@ -23,7 +26,7 @@ public class TurtleBot {
 	private GameMap map;
 	private static int leftCount = 0;
 
-	public TurtleBot(MapTileSetter setter, GameMap map) {
+	public MazeSolverTurtleBot(MapTileSetter setter, GameMap map) {
 		this.setter = setter;
 		this.mover = setter.getTurtleMover();
 		this.map = map;

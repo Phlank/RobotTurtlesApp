@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import edu.bsu.cs222.R;
-import edu.bsu.cs222.TurtleBot;
+import edu.bsu.cs222.bot.MazeSolverTurtleBot;
 import edu.bsu.cs222.enums.Command;
 import edu.bsu.cs222.game.maps.GameMapDataParser;
 
@@ -30,7 +30,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	private PopupMenu menu;
 	private Document document;
 	private GameMapDataParser parser = new GameMapDataParser();
-	private TurtleBot bot;
+	private MazeSolverTurtleBot bot;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +126,7 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		runBot.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				Log.d("GO", "Run Bot Clicked");
-				bot = new TurtleBot(mapTileSetter, mapTileSetter.getGameMap());
+				bot = new MazeSolverTurtleBot(mapTileSetter, mapTileSetter.getGameMap());
 				bot.go();
 			}
 		});
