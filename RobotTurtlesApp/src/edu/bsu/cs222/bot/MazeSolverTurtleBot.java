@@ -10,7 +10,7 @@ import edu.bsu.cs222.enums.Direction;
 import edu.bsu.cs222.game.maps.GameMap;
 import edu.bsu.cs222.tiles.Tile;
 
-public class MazeSolverTurtleBot {
+public class MazeSolverTurtleBot implements TurtleBot {
 
 	private static final int WEST_BLOCK_MODIFIER = -1;
 	private static final int EAST_BLOCK_MODIFIER = 1;
