@@ -5,6 +5,7 @@ import edu.bsu.cs222.game.maps.GameMap;
 
 public class GraphSolverTurtleBot implements TurtleBot {
 	
+	private Graph graph;
 	private MapTileSetter setter;
 	private GameMap map;
 

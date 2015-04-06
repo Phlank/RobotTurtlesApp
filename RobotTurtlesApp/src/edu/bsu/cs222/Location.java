@@ -9,36 +9,36 @@ import edu.bsu.cs222.enums.Direction;
 @TargetApi(Build.VERSION_CODES.KITKAT)
 @SuppressLint("NewApi")
 public class Location {
-	
+
 	private Integer location;
-	
-	public Location(Integer location){
+
+	public Location(Integer location) {
 		this.location = location;
 	}
-	
-	public Integer getTileLocation(){
+
+	public Integer getTileLocation() {
 		return this.location;
 	}
-	
-	public Location getForwardLocation(Direction direction){
+
+	public Location getForwardLocation(Direction direction) {
 		Integer integerDirection = direction.getIntegerDirection();
-		return new Location(this.location + integerDirection);	
+		return new Location(this.location + integerDirection);
 	}
-	
-	public Location getSecondForwardLocation(Direction direction){
+
+	public Location getSecondForwardLocation(Direction direction) {
 		Integer integerDirection = 2 * direction.getIntegerDirection();
 		return new Location(this.location + integerDirection);
 	}
-	
+
 	@Override
-	public int hashCode(){
+	public int hashCode() {
 		return Objects.hash(location);
 	}
-	
+
 	@Override
-	public boolean equals(Object object){
-		if (object instanceof Location){
-			Location other = (Location)object;
+	public boolean equals(Object object) {
+		if (object instanceof Location) {
+			Location other = (Location) object;
 			return Objects.equals(this.location, other.location);
 		}
 		return false;
