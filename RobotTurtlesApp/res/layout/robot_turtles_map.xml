@@ -8,6 +8,7 @@
     tools:context="edu.bsu.cs222.robot_turtles_map" >
 
     <TableRow
+        android:id="@+id/row0"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
@@ -62,6 +63,7 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/row1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
@@ -116,6 +118,7 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/row2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
@@ -170,6 +173,7 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/row3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
@@ -224,6 +228,7 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/row4"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
@@ -278,6 +283,7 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/row5"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
@@ -332,6 +338,7 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/row6"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
@@ -386,6 +393,7 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/row7"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
