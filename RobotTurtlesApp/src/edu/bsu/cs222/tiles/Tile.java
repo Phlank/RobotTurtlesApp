@@ -1,12 +1,12 @@
 package edu.bsu.cs222.tiles;
 
-import edu.bsu.cs222.enums.Direction;
 import edu.bsu.cs222.Location;
 import edu.bsu.cs222.R;
+import edu.bsu.cs222.enums.Direction;
 
 public abstract class Tile {
 
-	private Location location;
+	protected Location location;
 
 	public Tile(Location location) {
 		this.location = location;
@@ -16,27 +16,27 @@ public abstract class Tile {
 		return false;
 	}
 
-	public boolean isTurtleTile(){
+	public boolean isTurtleTile() {
 		return false;
 	}
-	
+
 	public boolean isStoneBlockTile() {
 		return false;
 	}
-	
-	public boolean isWoodBlockTile(){
+
+	public boolean isWoodBlockTile() {
 		return false;
 	}
-	
-	public boolean isIceBlockTile(){
+
+	public boolean isIceBlockTile() {
 		return false;
 	}
-	
-	public boolean isPuddleTile(){
+
+	public boolean isPuddleTile() {
 		return false;
 	}
-	
-	public boolean isJewelTile(){
+
+	public boolean isJewelTile() {
 		return false;
 	}
 

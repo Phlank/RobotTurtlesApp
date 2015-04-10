@@ -8,8 +8,8 @@ public class IceBlockTile extends Tile {
 	public IceBlockTile(Location location) {
 		super(location);
 	}
-	
-	public boolean isIceBlockTile(){
+
+	public boolean isIceBlockTile() {
 		return true;
 	}
 

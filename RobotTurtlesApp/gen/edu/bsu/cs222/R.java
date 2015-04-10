@@ -1651,8 +1651,14 @@ containing a value of this type.
     }
     public static final class id {
         public static final int CardHolder=0x7f0a0089;
-        public static final int ImageView0=0x7f0a0040;
-        public static final int ImageView1=0x7f0a0041;
+        public static final int ImageView00=0x7f0a0040;
+        public static final int ImageView01=0x7f0a0041;
+        public static final int ImageView02=0x7f0a0042;
+        public static final int ImageView03=0x7f0a0043;
+        public static final int ImageView04=0x7f0a0044;
+        public static final int ImageView05=0x7f0a0045;
+        public static final int ImageView06=0x7f0a0046;
+        public static final int ImageView07=0x7f0a0047;
         public static final int ImageView10=0x7f0a0049;
         public static final int ImageView11=0x7f0a004a;
         public static final int ImageView12=0x7f0a004b;
@@ -1661,7 +1667,6 @@ containing a value of this type.
         public static final int ImageView15=0x7f0a004e;
         public static final int ImageView16=0x7f0a004f;
         public static final int ImageView17=0x7f0a0050;
-        public static final int ImageView2=0x7f0a0042;
         public static final int ImageView20=0x7f0a0052;
         public static final int ImageView21=0x7f0a0053;
         public static final int ImageView22=0x7f0a0054;
@@ -1670,7 +1675,6 @@ containing a value of this type.
         public static final int ImageView25=0x7f0a0057;
         public static final int ImageView26=0x7f0a0058;
         public static final int ImageView27=0x7f0a0059;
-        public static final int ImageView3=0x7f0a0043;
         public static final int ImageView30=0x7f0a005b;
         public static final int ImageView31=0x7f0a005c;
         public static final int ImageView32=0x7f0a005d;
@@ -1679,7 +1683,6 @@ containing a value of this type.
         public static final int ImageView35=0x7f0a0060;
         public static final int ImageView36=0x7f0a0061;
         public static final int ImageView37=0x7f0a0062;
-        public static final int ImageView4=0x7f0a0044;
         public static final int ImageView40=0x7f0a0064;
         public static final int ImageView41=0x7f0a0065;
         public static final int ImageView42=0x7f0a0066;
@@ -1688,7 +1691,6 @@ containing a value of this type.
         public static final int ImageView45=0x7f0a0069;
         public static final int ImageView46=0x7f0a006a;
         public static final int ImageView47=0x7f0a006b;
-        public static final int ImageView5=0x7f0a0045;
         public static final int ImageView50=0x7f0a006d;
         public static final int ImageView51=0x7f0a006e;
         public static final int ImageView52=0x7f0a006f;
@@ -1697,7 +1699,6 @@ containing a value of this type.
         public static final int ImageView55=0x7f0a0072;
         public static final int ImageView56=0x7f0a0073;
         public static final int ImageView57=0x7f0a0074;
-        public static final int ImageView6=0x7f0a0046;
         public static final int ImageView60=0x7f0a0076;
         public static final int ImageView61=0x7f0a0077;
         public static final int ImageView62=0x7f0a0078;
@@ -1706,7 +1707,6 @@ containing a value of this type.
         public static final int ImageView65=0x7f0a007b;
         public static final int ImageView66=0x7f0a007c;
         public static final int ImageView67=0x7f0a007d;
-        public static final int ImageView7=0x7f0a0047;
         public static final int ImageView70=0x7f0a007f;
         public static final int ImageView71=0x7f0a0080;
         public static final int ImageView72=0x7f0a0081;

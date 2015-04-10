@@ -1,11 +1,11 @@
 package edu.bsu.cs222;
 
-import edu.bsu.cs222.finders.TileFinder;
 import edu.bsu.cs222.finders.TurtleFinder;
 import edu.bsu.cs222.game.maps.GameMap;
 import edu.bsu.cs222.tiles.OpenSpaceTile;
 import edu.bsu.cs222.tiles.PuddleTile;
 import edu.bsu.cs222.tiles.Tile;
+import edu.bsu.cs222.tiles.TurtleTile;
 import edu.bsu.cs222.tiles.WoodBlockTile;
 
 public class TurtleMover {
@@ -14,7 +14,6 @@ public class TurtleMover {
 	private GameMap map;
 	private Location locationToMove;
 	private Tile nextTile;
-	private TileFinder tileFinder;
 
 	public TurtleMover(GameMap map) {
 		this.map = map;
@@ -31,8 +30,7 @@ public class TurtleMover {
 	}
 
 	public void findTurtleAndNextTile() {
-		tileFinder = new TileFinder(new TurtleFinder());
-		turtle = (TurtleTile) tileFinder.findTile(map);
+		turtle = new TurtleFinder().find(map);
 		locationToMove = turtle.getForwardTileLocation();
 		nextTile = (Tile) map.getTile(locationToMove);
 	}
@@ -50,8 +48,8 @@ public class TurtleMover {
 	private GameMap moveTurtleTileForward() {
 		Location turtleLocation = turtle.getLocation();
 		turtle.setLocation(locationToMove);
-		map.addSingleTileToMap(turtle);
-		map.addSingleTileToMap(new OpenSpaceTile(turtleLocation));
+		map.replaceTile(turtle);
+		map.replaceTile(new OpenSpaceTile(turtleLocation));
 		return map;
 	}
 
@@ -60,7 +58,7 @@ public class TurtleMover {
 		Tile thirdTile = map.getTile(secondLocationToMove);
 		if (canMove(secondLocationToMove) && thirdTile.isOpenSpaceTile()) {
 			moveTurtleTileForward();
-			map.addSingleTileToMap(new WoodBlockTile(thirdTile.getLocation()));
+			map.replaceTile(new WoodBlockTile(thirdTile.getLocation()));
 		}
 		return map;
 	}
@@ -68,7 +66,7 @@ public class TurtleMover {
 	public GameMap fireLaser() {
 		findTurtleAndNextTile();
 		if (canMove(locationToMove) && nextTile.isIceBlockTile()) {
-			map.addSingleTileToMap(new PuddleTile(nextTile.getLocation()));
+			map.replaceTile(new PuddleTile(nextTile.getLocation()));
 		}
 		return map;
 	}

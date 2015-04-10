@@ -119,14 +119,15 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 			}
 		});
 	}
-	
+
 	public void addListenerRunBotButton() {
 		Log.d("LISTENER_ADD", "bot");
 		runBot = (Button) findViewById(R.id.bot);
 		runBot.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				Log.d("GO", "Run Bot Clicked");
-				bot = new MazeSolverTurtleBot(mapTileSetter, mapTileSetter.getGameMap());
+				bot = new MazeSolverTurtleBot(mapTileSetter, mapTileSetter
+						.getGameMap());
 				bot.go();
 			}
 		});
@@ -145,9 +146,9 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 		try {
 			document = parser.parsePlayerMapData(getAssets().open(
 					"playerMaps.xml"));
+			gameMapSelector.createInitialMap(document);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		gameMapSelector.createInitialMap(document);
 	}
 }

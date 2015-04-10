@@ -12,8 +12,8 @@ public class JewelTile extends Tile {
 	public boolean isOpenSpaceTile() {
 		return true;
 	}
-	
-	public boolean isJewelTile(){
+
+	public boolean isJewelTile() {
 		return true;
 	}
 

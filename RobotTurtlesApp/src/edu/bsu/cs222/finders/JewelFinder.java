@@ -7,7 +7,8 @@ import edu.bsu.cs222.tiles.Tile;
 
 public class JewelFinder implements Finder {
 
-	private JewelTile jewel = new JewelTile(new Location(-1));
+	private static final int[] INIT_JEWEL = { -1, -1 };
+	private JewelTile jewel = new JewelTile(new Location(INIT_JEWEL));
 
 	@Override
 	public JewelTile find(GameMap map) {

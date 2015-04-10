@@ -10,36 +10,40 @@ public enum Command {
 
 	private String command;
 	private Integer image;
-	
+
 	static {
 		FORWARD.command = "Forward";
 		LEFT.command = "Left";
 		RIGHT.command = "Right";
 		LASER.command = "Laser";
-		
+
 		FORWARD.image = R.drawable.uparrow;
 		LEFT.image = R.drawable.leftarrow;
 		RIGHT.image = R.drawable.rightarrow;
 		LASER.image = R.drawable.laser;
 	}
-	
-	public String setCommand(){
+
+	public String setCommand() {
 		return command;
 	}
 
 	public Integer setImage() {
 		return image;
 	}
-	
-	public void performTurtleAction(MapTileSetter mapTileSetter){
-		switch(this){
-		case FORWARD: mapTileSetter.moveTurtleForward();
+
+	public void performTurtleAction(MapTileSetter mapTileSetter) {
+		switch (this) {
+		case FORWARD:
+			mapTileSetter.moveTurtleForward();
 			break;
-		case RIGHT: mapTileSetter.turnTurtleToRight();
+		case RIGHT:
+			mapTileSetter.turnTurtleToRight();
 			break;
-		case LEFT: mapTileSetter.turnTurtleToLeft();
+		case LEFT:
+			mapTileSetter.turnTurtleToLeft();
 			break;
-		case LASER: mapTileSetter.fireLaser();
+		case LASER:
+			mapTileSetter.fireLaser();
 			break;
 		}
 	}

@@ -12,8 +12,8 @@ public class PuddleTile extends Tile {
 	public boolean isOpenSpaceTile() {
 		return true;
 	}
-	
-	public boolean isPuddleTile(){
+
+	public boolean isPuddleTile() {
 		return true;
 	}
 

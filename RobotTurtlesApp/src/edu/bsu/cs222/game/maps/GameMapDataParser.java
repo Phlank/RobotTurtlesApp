@@ -25,7 +25,7 @@ public class GameMapDataParser {
 		return document;
 	}
 
-	public Document parsePlayerMapDataForTest(String filename) {
+	public Document parseFile(String filename) {
 		String file = new File(filename).getAbsolutePath();
 		DocumentBuilder db = documentBuilder();
 		try {

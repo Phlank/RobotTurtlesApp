@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.widget.ImageView;
 import edu.bsu.cs222.activities.MapLayout;
 import edu.bsu.cs222.finders.JewelFinder;
-import edu.bsu.cs222.finders.TileFinder;
 import edu.bsu.cs222.finders.TurtleFinder;
 import edu.bsu.cs222.game.maps.GameMap;
 import edu.bsu.cs222.tiles.JewelTile;
 import edu.bsu.cs222.tiles.Tile;
+import edu.bsu.cs222.tiles.TurtleTile;
 
 public class MapTileSetter {
 
@@ -29,8 +29,7 @@ public class MapTileSetter {
 
 	public void setMap(GameMap map) {
 		this.gameMap = map;
-		TileFinder tileFinder = new TileFinder(new JewelFinder());
-		jewel = (JewelTile) tileFinder.findTile(map);
+		jewel = new JewelFinder().find(gameMap);
 		scoreKeeper.resetScore();
 		turtleMover = new TurtleMover(gameMap);
 	}
@@ -44,14 +43,14 @@ public class MapTileSetter {
 	}
 
 	private void findTurtleTile() {
-		TileFinder tileFinder = new TileFinder(new TurtleFinder());
-		turtleTile = (TurtleTile) tileFinder.findTile(gameMap);
+		turtleTile = new TurtleFinder().find(gameMap);
 	}
 
 	private void setTileImages(Location location) {
-		Integer key = location.getTileLocation();
+		int[] key = location.getTileLocation();
 		try {
-			id = R.id.class.getField("ImageView" + key).getInt(FIRST_INDEX);
+			id = R.id.class.getField("ImageView" + key[0] + key[1]).getInt(
+					FIRST_INDEX);
 			ImageView image = (ImageView) activity.findViewById(id);
 			image.setImageResource(gameMap.getTile(location).getImage());
 		} catch (IllegalAccessException | IllegalArgumentException
@@ -108,7 +107,7 @@ public class MapTileSetter {
 	public TurtleMover getTurtleMover() {
 		return turtleMover;
 	}
-	
+
 	public Tile getForwardTile() {
 		return gameMap.getTile(turtleTile.getForwardTileLocation());
 	}

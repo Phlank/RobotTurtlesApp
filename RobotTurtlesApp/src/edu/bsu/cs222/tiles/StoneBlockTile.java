@@ -9,12 +9,12 @@ public class StoneBlockTile extends Tile {
 		super(location);
 	}
 
-	public boolean isStoneBlockTile(){
+	public boolean isStoneBlockTile() {
 		return true;
 	}
-	
+
 	public int getImage() {
 		return R.drawable.stonetile;
 	}
-	
+
 }

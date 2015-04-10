@@ -21,8 +21,9 @@ public class ScoreKeeper {
 	private void updateScore() {
 		score = (int) (MAX_SCORE / (DIVISOR + CONSTANT * totalMoves));
 	}
-	public void resetScore(){
+
+	public void resetScore() {
 		score = 0;
-		totalMoves= 0;
+		totalMoves = 0;
 	}
 }

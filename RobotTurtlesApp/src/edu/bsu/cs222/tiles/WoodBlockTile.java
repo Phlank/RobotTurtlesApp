@@ -8,8 +8,8 @@ public class WoodBlockTile extends Tile {
 	public WoodBlockTile(Location location) {
 		super(location);
 	}
-	
-	public boolean isWoodBlockTile(){
+
+	public boolean isWoodBlockTile() {
 		return true;
 	}
 

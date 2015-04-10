@@ -14,49 +14,49 @@
         android:gravity="center_horizontal" >
 
         <ImageView
-            android:id="@+id/ImageView0"
+            android:id="@+id/ImageView00"
             android:contentDescription="@string/T00"
             android:src="@+drawable/grasstile" >
         </ImageView>
 
         <ImageView
-            android:id="@+id/ImageView1"
+            android:id="@+id/ImageView01"
             android:contentDescription="@string/T01"
             android:src="@+drawable/grasstile" >
         </ImageView>
 
         <ImageView
-            android:id="@+id/ImageView2"
+            android:id="@+id/ImageView02"
             android:contentDescription="@string/T02"
             android:src="@+drawable/grasstile" >
         </ImageView>
 
         <ImageView
-            android:id="@+id/ImageView3"
+            android:id="@+id/ImageView03"
             android:contentDescription="@string/T03"
             android:src="@+drawable/grasstile" >
         </ImageView>
 
         <ImageView
-            android:id="@+id/ImageView4"
+            android:id="@+id/ImageView04"
             android:contentDescription="@string/T04"
             android:src="@+drawable/grasstile" >
         </ImageView>
 
         <ImageView
-            android:id="@+id/ImageView5"
+            android:id="@+id/ImageView05"
             android:contentDescription="@string/T05"
             android:src="@+drawable/grasstile" >
         </ImageView>
 
         <ImageView
-            android:id="@+id/ImageView6"
+            android:id="@+id/ImageView06"
             android:contentDescription="@string/T06"
             android:src="@+drawable/grasstile" >
         </ImageView>
 
         <ImageView
-            android:id="@+id/ImageView7"
+            android:id="@+id/ImageView07"
             android:contentDescription="@string/T07"
             android:src="@+drawable/grasstile" >
         </ImageView>

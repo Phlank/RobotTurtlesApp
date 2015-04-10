@@ -350,8 +350,14 @@ int drawable turtletileup 0x7f020040
 int drawable uparrow 0x7f020041
 int drawable woodtile 0x7f020042
 int id CardHolder 0x7f0a0089
-int id ImageView0 0x7f0a0040
-int id ImageView1 0x7f0a0041
+int id ImageView00 0x7f0a0040
+int id ImageView01 0x7f0a0041
+int id ImageView02 0x7f0a0042
+int id ImageView03 0x7f0a0043
+int id ImageView04 0x7f0a0044
+int id ImageView05 0x7f0a0045
+int id ImageView06 0x7f0a0046
+int id ImageView07 0x7f0a0047
 int id ImageView10 0x7f0a0049
 int id ImageView11 0x7f0a004a
 int id ImageView12 0x7f0a004b
@@ -360,7 +366,6 @@ int id ImageView14 0x7f0a004d
 int id ImageView15 0x7f0a004e
 int id ImageView16 0x7f0a004f
 int id ImageView17 0x7f0a0050
-int id ImageView2 0x7f0a0042
 int id ImageView20 0x7f0a0052
 int id ImageView21 0x7f0a0053
 int id ImageView22 0x7f0a0054
@@ -369,7 +374,6 @@ int id ImageView24 0x7f0a0056
 int id ImageView25 0x7f0a0057
 int id ImageView26 0x7f0a0058
 int id ImageView27 0x7f0a0059
-int id ImageView3 0x7f0a0043
 int id ImageView30 0x7f0a005b
 int id ImageView31 0x7f0a005c
 int id ImageView32 0x7f0a005d
@@ -378,7 +382,6 @@ int id ImageView34 0x7f0a005f
 int id ImageView35 0x7f0a0060
 int id ImageView36 0x7f0a0061
 int id ImageView37 0x7f0a0062
-int id ImageView4 0x7f0a0044
 int id ImageView40 0x7f0a0064
 int id ImageView41 0x7f0a0065
 int id ImageView42 0x7f0a0066
@@ -387,7 +390,6 @@ int id ImageView44 0x7f0a0068
 int id ImageView45 0x7f0a0069
 int id ImageView46 0x7f0a006a
 int id ImageView47 0x7f0a006b
-int id ImageView5 0x7f0a0045
 int id ImageView50 0x7f0a006d
 int id ImageView51 0x7f0a006e
 int id ImageView52 0x7f0a006f
@@ -396,7 +398,6 @@ int id ImageView54 0x7f0a0071
 int id ImageView55 0x7f0a0072
 int id ImageView56 0x7f0a0073
 int id ImageView57 0x7f0a0074
-int id ImageView6 0x7f0a0046
 int id ImageView60 0x7f0a0076
 int id ImageView61 0x7f0a0077
 int id ImageView62 0x7f0a0078
@@ -405,7 +406,6 @@ int id ImageView64 0x7f0a007a
 int id ImageView65 0x7f0a007b
 int id ImageView66 0x7f0a007c
 int id ImageView67 0x7f0a007d
-int id ImageView7 0x7f0a0047
 int id ImageView70 0x7f0a007f
 int id ImageView71 0x7f0a0080
 int id ImageView72 0x7f0a0081

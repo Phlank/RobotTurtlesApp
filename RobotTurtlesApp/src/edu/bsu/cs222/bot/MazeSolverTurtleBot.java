@@ -12,10 +12,6 @@ import edu.bsu.cs222.tiles.Tile;
 
 public class MazeSolverTurtleBot implements TurtleBot {
 
-	private static final int WEST_BLOCK_MODIFIER = -1;
-	private static final int EAST_BLOCK_MODIFIER = 1;
-	private static final int NORTH_BLOCK_MODIFIER = -8;
-	private static final int SOUTH_BLOCK_MODIFIER = 8;
 	private static final int BACKWARDS_LEFT_COUNT = 2;
 	private static final int FORWARDS_LEFT_COUNT = 4;
 
@@ -39,7 +35,8 @@ public class MazeSolverTurtleBot implements TurtleBot {
 			setter.turnTurtleToLeft();
 			leftCount++;
 		} // Looking at empty block (not backwards)
-		else if (setter.getTurtleMover().canMoveFoward() && !visited.contains(setter.getForwardTile())) {
+		else if (setter.getTurtleMover().canMoveFoward()
+				&& !visited.contains(setter.getForwardTile())) {
 			Log.d("GO", "Moving forward");
 			leftCount = 0;
 			Location lastLocation = setter.getTurtleTile().getLocation();
@@ -67,36 +64,31 @@ public class MazeSolverTurtleBot implements TurtleBot {
 	private void moveToLastVisitedTile() {
 		if (visited.size() > 0) {
 			// West
-			if (visited.get(visited.size() - 1).getLocation().getTileLocation() == mover
-					.getTile().getLocation().getTileLocation()
-					- WEST_BLOCK_MODIFIER) {
+			if (visited.get(visited.size() - 1).getLocation() == mover
+					.getTile().getLocation().getForwardLocation(Direction.WEST)) {
 				while (mover.getTile().getDirection() != Direction.WEST) {
 					setter.turnTurtleToLeft();
 				}
 			}
 			// East
-			else if (visited.get(visited.size() - 1).getLocation()
-					.getTileLocation() == mover.getTile().getLocation()
-					.getTileLocation()
-					+ EAST_BLOCK_MODIFIER) {
+			else if (visited.get(visited.size() - 1).getLocation() == mover
+					.getTile().getLocation().getForwardLocation(Direction.EAST)) {
 				while (mover.getTile().getDirection() != Direction.EAST) {
 					setter.turnTurtleToLeft();
 				}
 			}
 			// North
-			else if (visited.get(visited.size() - 1).getLocation()
-					.getTileLocation() == mover.getTile().getLocation()
-					.getTileLocation()
-					- NORTH_BLOCK_MODIFIER) {
+			else if (visited.get(visited.size() - 1).getLocation() == mover
+					.getTile().getLocation()
+					.getForwardLocation(Direction.NORTH)) {
 				while (mover.getTile().getDirection() != Direction.NORTH) {
 					setter.turnTurtleToLeft();
 				}
 			}
 			// South
-			else if (visited.get(visited.size() - 1).getLocation()
-					.getTileLocation() == mover.getTile().getLocation()
-					.getTileLocation()
-					- SOUTH_BLOCK_MODIFIER) {
+			else if (visited.get(visited.size() - 1).getLocation() == mover
+					.getTile().getLocation()
+					.getForwardLocation(Direction.SOUTH)) {
 				while (mover.getTile().getDirection() != Direction.SOUTH) {
 					setter.turnTurtleToLeft();
 				}

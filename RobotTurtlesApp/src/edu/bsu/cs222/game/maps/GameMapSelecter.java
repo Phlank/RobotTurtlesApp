@@ -8,10 +8,10 @@ import edu.bsu.cs222.activities.MapMenuItem;
 public class GameMapSelecter {
 
 	private MapTileSetter mapTileSetter;
-	private GameMapMaker gameMapMaker;
 	private Integer currentMap;
 	private GameMap gameMap;
 	private static final Integer INITIAL_MAP = 1;
+	private Document document;
 
 	public GameMapSelecter(MapTileSetter mapTileSetter) {
 		this.mapTileSetter = mapTileSetter;
@@ -23,7 +23,7 @@ public class GameMapSelecter {
 
 	public void createInitialMap(Document document) {
 		currentMap = INITIAL_MAP;
-		gameMapMaker = new GameMapMaker(document);
+		this.document = document;
 		setGameMap(INITIAL_MAP);
 	}
 
@@ -32,9 +32,9 @@ public class GameMapSelecter {
 		currentMap = Integer.valueOf(mapMenuId);
 		setGameMap(mapMenuId);
 	}
-	
-	private void setGameMap(Integer mapMenuId){
-		gameMap = gameMapMaker.createMap(mapMenuId);
+
+	private void setGameMap(Integer mapMenuId) {
+		gameMap = GameMapMaker.createMap(document, mapMenuId);
 		mapTileSetter.setMap(gameMap);
 		mapTileSetter.setTiles();
 	}
