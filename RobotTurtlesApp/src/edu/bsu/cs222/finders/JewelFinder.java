@@ -13,7 +13,7 @@ public class JewelFinder implements Finder {
 	@Override
 	public JewelTile find(GameMap map) {
 		for (Tile tile : map) {
-			if (tile.isJewelTile()) {
+			if (tile != null && tile.isJewelTile()) {
 				return (JewelTile) tile;
 			}
 		}

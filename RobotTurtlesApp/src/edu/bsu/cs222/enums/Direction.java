@@ -8,17 +8,20 @@ public enum Direction {
 	private Direction leftTurn;
 	private Direction rightTurn;
 	private Direction reverseDirection;
-	private int[] locationModifier = { 0, 0 };
+	private int locationModifierRow;
+	private int locationModifierCol;
 	private int image;
 
 	static {
 		NORTH.leftTurn = WEST;
 		NORTH.rightTurn = EAST;
+		
 		SOUTH.leftTurn = EAST;
 		SOUTH.rightTurn = WEST;
 
 		EAST.leftTurn = NORTH;
 		EAST.rightTurn = SOUTH;
+		
 		WEST.leftTurn = SOUTH;
 		WEST.rightTurn = NORTH;
 
@@ -27,11 +30,16 @@ public enum Direction {
 		EAST.reverseDirection = WEST;
 		WEST.reverseDirection = EAST;
 
-		NORTH.locationModifier[0] = -1;
-		SOUTH.locationModifier[0] = 1;
-		WEST.locationModifier[1] = -1;
-		EAST.locationModifier[1] = 1;
-
+		NORTH.locationModifierRow = -1;
+		SOUTH.locationModifierRow = 1;
+		EAST.locationModifierRow = 0;
+		WEST.locationModifierRow = 0;
+		
+		NORTH.locationModifierCol = 0;
+		SOUTH.locationModifierCol = 0;
+		EAST.locationModifierCol = 1;
+		WEST.locationModifierCol = -1;
+		
 		NORTH.image = R.drawable.turtletileup;
 		SOUTH.image = R.drawable.turtletiledown;
 		EAST.image = R.drawable.turtletileright;
@@ -51,7 +59,8 @@ public enum Direction {
 	}
 
 	public int[] locationModifier() {
-		return locationModifier;
+		int[] modifier = {locationModifierRow, locationModifierCol};
+		return modifier;
 	}
 
 	public int setImage() {

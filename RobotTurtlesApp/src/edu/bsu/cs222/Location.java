@@ -43,16 +43,24 @@ public class Location {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(location);
+		return Objects.hash(location[0], location[1]);
 	}
 
 	@Override
 	public boolean equals(Object object) {
-		if (object instanceof Location) {
+		if (object == null) {
+			return false;
+		} else if (!object.getClass().equals(Location.class)) {
+			return false;
+		} else {
 			Location other = (Location) object;
-			return Objects.equals(this.location, other.location);
+			if (this.location[0] == other.location[0]
+					&& this.location[1] == other.location[1]) {
+				return true;
+			} else {
+				return false;
+			}
 		}
-		return false;
 	}
 
 }

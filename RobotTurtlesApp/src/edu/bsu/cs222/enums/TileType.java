@@ -14,7 +14,15 @@ public enum TileType {
 
 	ICEBLOCK, JEWEL, OPENSPACE, PUDDLE, STONEBLOCK, WOODBLOCK, TURTLE;
 
-	private String name;
+	public static final String ICE_NAME = "Ice";
+	public static final String JEWEL_NAME = "Jewel";
+	public static final String OPEN_NAME = "Open";
+	public static final String PUDDLE_NAME = "Puddle";
+	public static final String STONE_NAME = "Stone";
+	public static final String WOOD_NAME = "Wood";
+	public static final String TURTLE_NAME = "Turtle";
+	
+	public String name;
 	private Tile tile;
 
 	static {
@@ -53,19 +61,19 @@ public enum TileType {
 
 	public static Tile createTileFromName(String name, Location location) {
 		switch (name) {
-		case "Open":
+		case OPEN_NAME:
 			return new OpenSpaceTile(location);
-		case "Stone":
+		case STONE_NAME:
 			return new StoneBlockTile(location);
-		case "Wood":
+		case WOOD_NAME:
 			return new WoodBlockTile(location);
-		case "Ice":
+		case ICE_NAME:
 			return new IceBlockTile(location);
-		case "Puddle":
+		case PUDDLE_NAME:
 			return new PuddleTile(location);
-		case "Jewel":
+		case JEWEL_NAME:
 			return new JewelTile(location);
-		case "Turtle":
+		case TURTLE_NAME:
 			return new TurtleTile(location);
 		default:
 			return null;

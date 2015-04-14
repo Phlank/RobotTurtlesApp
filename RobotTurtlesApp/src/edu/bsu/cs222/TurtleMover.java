@@ -1,5 +1,6 @@
 package edu.bsu.cs222;
 
+import android.util.Log;
 import edu.bsu.cs222.finders.TurtleFinder;
 import edu.bsu.cs222.game.maps.GameMap;
 import edu.bsu.cs222.tiles.OpenSpaceTile;
@@ -37,6 +38,7 @@ public class TurtleMover {
 
 	public boolean canMoveFoward() {
 		boolean canTurtleMove = canMove(locationToMove);
+		Log.d("TurtleMover", "Can move forward = " + canTurtleMove);
 		return (canTurtleMove && nextTile.isOpenSpaceTile());
 	}
 
@@ -72,6 +74,7 @@ public class TurtleMover {
 	}
 
 	private boolean canMove(Location locationToMove) {
+		Log.d("LOCATION_TO_MOVE", "Row: " + locationToMove.getTileLocation()[0] + " Col: " + locationToMove.getTileLocation()[1]);
 		return map.doesLocationExist(locationToMove);
 	}
 
