@@ -7,7 +7,6 @@ import org.w3c.dom.Document;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.PopupMenu.OnMenuItemClickListener;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -70,7 +69,6 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	}
 
 	public void addListenerMenuButton() {
-		Log.d("LISTENER_ADD", "menu");
 		menuButton = (Button) findViewById(R.id.menu);
 		menuButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -80,7 +78,6 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	}
 
 	public void addListenerForwardButton() {
-		Log.d("LISTENER_ADD", "forward");
 		forward = (Button) findViewById(R.id.forward);
 		forward.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -90,7 +87,6 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	}
 
 	public void addListenerLaserButton() {
-		Log.d("LISTENER_ADD", "laser");
 		laser = (Button) findViewById(R.id.laser);
 		laser.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -100,7 +96,6 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	}
 
 	public void addListenerRightButton() {
-		Log.d("LISTENER_ADD", "right");
 		right = (Button) findViewById(R.id.right);
 		right.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -110,22 +105,18 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	}
 
 	public void addListenerLeftButton() {
-		Log.d("LISTENER_ADD", "left");
 		left = (Button) findViewById(R.id.left);
 		left.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				Log.d("Left", "left clicked");
 				Command.LEFT.performTurtleAction(mapTileSetter);
 			}
 		});
 	}
 
 	public void addListenerRunBotButton() {
-		Log.d("LISTENER_ADD", "bot");
 		runBot = (Button) findViewById(R.id.bot);
 		runBot.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				Log.d("GO", "Run Bot Clicked");
 				bot = new MazeSolverTurtleBot(mapTileSetter, mapTileSetter
 						.getGameMap());
 				bot.go();
