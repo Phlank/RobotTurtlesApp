@@ -2,8 +2,6 @@ package edu.bsu.cs222.bot;
 
 import java.util.ArrayList;
 
-import edu.bsu.cs222.tiles.IceBlockTile;
-
 public class Path {
 	
 	private ArrayList<Node> nodes;

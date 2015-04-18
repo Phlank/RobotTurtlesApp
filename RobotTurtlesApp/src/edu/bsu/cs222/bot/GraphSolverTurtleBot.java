@@ -3,8 +3,6 @@ package edu.bsu.cs222.bot;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.util.Log;
-import edu.bsu.cs222.Location;
 import edu.bsu.cs222.MapTileSetter;
 import edu.bsu.cs222.Utility;
 import edu.bsu.cs222.enums.Direction;

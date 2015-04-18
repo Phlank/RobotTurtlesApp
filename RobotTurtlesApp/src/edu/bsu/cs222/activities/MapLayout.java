@@ -15,7 +15,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import edu.bsu.cs222.R;
 import edu.bsu.cs222.bot.GraphSolverTurtleBot;
-import edu.bsu.cs222.bot.MazeSolverTurtleBot;
 import edu.bsu.cs222.enums.Command;
 import edu.bsu.cs222.game.maps.GameMapDataParser;
 

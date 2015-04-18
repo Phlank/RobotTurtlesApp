@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.Map;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 import edu.bsu.cs222.Location;
 import edu.bsu.cs222.enums.TileType;
 import edu.bsu.cs222.tiles.Tile;
@@ -55,8 +54,6 @@ public final class GameMap implements Iterable<Tile> {
 	}
 
 	public boolean doesLocationExist(Location locationToMove) {
-		Log.d("MAP","KEYSET: " + map.keySet());
-		Log.d("MAP", "LTM: " + locationToMove);
 		return map.keySet().contains(locationToMove);
 	}
 }

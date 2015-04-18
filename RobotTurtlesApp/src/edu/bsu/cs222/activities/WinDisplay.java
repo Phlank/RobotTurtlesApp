@@ -65,7 +65,6 @@ public class WinDisplay extends ActionBarActivity {
 					+ INCREMENT_MAP));
 		}
 		bot = new GraphSolverTurtleBot(mapTileSetter, mapTileSetter.getGameMap());
-
 	}
 
 	public void setMessages(Integer score) {
