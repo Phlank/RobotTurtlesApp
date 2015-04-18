@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import edu.bsu.cs222.MapTileSetter;
 import edu.bsu.cs222.R;
+import edu.bsu.cs222.bot.GraphSolverTurtleBot;
 import edu.bsu.cs222.game.maps.GameMapSelecter;
 
 public class WinDisplay extends ActionBarActivity {
@@ -18,6 +19,7 @@ public class WinDisplay extends ActionBarActivity {
 	private static final Integer FINAL_MAP = 15;
 	private static final Integer FIRST_MAP = 1;
 	private static final Integer INCREMENT_MAP = 1;
+	protected GraphSolverTurtleBot bot;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,7 @@ public class WinDisplay extends ActionBarActivity {
 			gameMapSelector.mapSelecter(new MapMenuItem(currentMap
 					+ INCREMENT_MAP));
 		}
+		bot = new GraphSolverTurtleBot(mapTileSetter, mapTileSetter.getGameMap());
 
 	}
 

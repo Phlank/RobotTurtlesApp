@@ -2,7 +2,9 @@ package edu.bsu.cs222.bot;
  
 import java.util.ArrayList;
 import java.util.List;
- 
+
+import android.util.Log;
+import edu.bsu.cs222.Location;
 import edu.bsu.cs222.MapTileSetter;
 import edu.bsu.cs222.Utility;
 import edu.bsu.cs222.enums.Direction;
@@ -145,15 +147,21 @@ public class GraphSolverTurtleBot implements TurtleBot {
 			setter.moveTurtleForward();
 			nextNode = solutionPath.next();
 		}
-		meltNextNodeIfIce();
 	}
 	
 	private boolean meltNextNodeIfIce() {
-		if (nextNode.getClass().equals(IceBlockTile.class)) {
+		if (nextNode.getTile().getClass().equals(IceBlockTile.class)) {
 			setter.fireLaser();
+			updateNodeTile();
 			return true;
 		}
 		return false;
+	}
+	
+	private void updateNodeTile() {
+		Node newNode = new Node(map.getTile(nextNode.getTile().getLocation()));
+		solutionPath.replaceNode(nextNode, newNode);
+		nextNode = newNode;
 	}
  
 }

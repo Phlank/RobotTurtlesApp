@@ -2,6 +2,8 @@ package edu.bsu.cs222.bot;
 
 import java.util.ArrayList;
 
+import edu.bsu.cs222.tiles.IceBlockTile;
+
 public class Path {
 	
 	private ArrayList<Node> nodes;
@@ -50,6 +52,12 @@ public class Path {
 	
 	public Node getLastNode() {
 		return nodes.get(nodes.size() - 1);
+	}
+	
+	public void replaceNode(Node toRemove, Node toAdd) {
+		int index = nodes.indexOf(toRemove);
+		nodes.remove(toRemove);
+		nodes.add(index, toAdd);
 	}
 
 }

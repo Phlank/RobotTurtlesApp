@@ -30,7 +30,6 @@ public class MapLayout extends WinDisplay implements OnMenuItemClickListener {
 	private PopupMenu menu;
 	private Document document;
 	private GameMapDataParser parser = new GameMapDataParser();
-	private GraphSolverTurtleBot bot;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
