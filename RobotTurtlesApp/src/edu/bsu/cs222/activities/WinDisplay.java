@@ -62,6 +62,7 @@ public class WinDisplay extends ActionBarActivity {
 			gameMapSelector.mapSelecter(new MapMenuItem(currentMap
 					+ INCREMENT_MAP));
 		}
+
 	}
 
 	public void setMessages(Integer score) {

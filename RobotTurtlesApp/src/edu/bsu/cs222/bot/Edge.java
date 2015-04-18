@@ -14,5 +14,9 @@ public class Edge {
 	public Node getEnd() {
 		return end;
 	}
+	
+	public boolean hasNode(Node node) {
+		return start.equals(node) || end.equals(node);
+	}
 
 }
