@@ -128,7 +128,7 @@ public class GraphSolverTurtleBot implements TurtleBot {
 			nextNode = solutionPath.next();
 		}
 		if (!turnTurtleTowardsNextNode()) {
-			moveTurtleToNextNode(nextNode);
+			moveTurtleToNextNode();
 		}
 	}
 	
@@ -140,7 +140,7 @@ public class GraphSolverTurtleBot implements TurtleBot {
 		return false;
 	}
 	
-	private void moveTurtleToNextNode(Node nextNode) {
+	private void moveTurtleToNextNode() {
 		if (!meltNextNodeIfIce()) {
 			setter.moveTurtleForward();
 			nextNode = solutionPath.next();
